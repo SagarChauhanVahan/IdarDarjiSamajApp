@@ -7,11 +7,12 @@
 
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import Router from './router';
 
 function App(): JSX.Element {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>My IDS App</Text>
+      <Router />
     </SafeAreaView>
   );
 }
