@@ -9,7 +9,7 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
 import Router from './router';
 
-function App(): JSX.Element {
+function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Router />
