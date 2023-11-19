@@ -5,11 +5,20 @@
  * @format
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
 import Router from './router';
+import { useDispatch } from 'react-redux';
+import { setApplicationTheme } from './redux/actions/ConfigActions';
+import { darkTheme, lightTheme } from './constants/theme';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setApplicationTheme(lightTheme));
+  }, [])
+  
   return (
     <SafeAreaView style={styles.container}>
       <Router />

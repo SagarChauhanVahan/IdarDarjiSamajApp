@@ -1,4 +1,4 @@
-import {SET_USER_DETAILS} from '../actions/types';
+import {SET_APP_THEME, SET_USER_DETAILS} from '../actions/types';
 
 export default function ConfigReducer(state = {}, action) {
   switch (action.type) {
@@ -7,6 +7,11 @@ export default function ConfigReducer(state = {}, action) {
         ...state,
         userDetails: action.payload,
       };
+    case SET_APP_THEME:
+      return {
+        ...state,
+        theme: action.payload
+      }
     default:
       return state;
   }
