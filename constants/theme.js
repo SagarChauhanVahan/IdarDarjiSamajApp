@@ -1,4 +1,5 @@
 export const lightTheme = {
+    themeName: 'light',
     screenBackgroundColor: '#FAFAFA',
     cardBackgroundColor: '#E1EBEA',
     primaryCtaColor: '#484B6A',
@@ -10,6 +11,7 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
+    themeName: 'dark',
     screenBackgroundColor: '#1C2026',
     cardBackgroundColor: '#2D323B',
     primaryCtaColor: '#EAD2AC',
