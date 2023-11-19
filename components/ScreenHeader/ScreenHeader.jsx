@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import { useSelector } from 'react-redux';
+import { fonts } from '../../constants/fonts';
 
 function ScreenHeader({title, onBackPress}) {
     const storeDetails = useSelector((data)=>data.appConfig);
@@ -41,6 +42,7 @@ const styles = StyleSheet.create({
     titleText: {
         marginLeft: 20,
         fontSize: 20,
+        fontFamily: fonts.Outfit500
     }
 })
 
