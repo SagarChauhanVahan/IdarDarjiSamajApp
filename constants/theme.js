@@ -7,7 +7,8 @@ export const lightTheme = {
     iconColor: '#2D323B',
     searchBorderColor: '#DDDDDD',
     placeholderTextColor: '#AADDDD',
-    lineSeperatorColor: '#D5DEDD'
+    lineSeperatorColor: '#D5DEDD',
+    menuBackground: '#FAFAFA'
 };
 
 export const darkTheme = {
@@ -19,5 +20,6 @@ export const darkTheme = {
     iconColor: '#CCCCCC',
     searchBorderColor: '#D5DEDD',
     placeholderTextColor: '#AADDDD',
-    lineSeperatorColor: '#D5DEDD'
+    lineSeperatorColor: '#D5DEDD',
+    menuBackground: '#2D323B'
 }

@@ -16,7 +16,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setApplicationTheme(darkTheme));
+    dispatch(setApplicationTheme(lightTheme));
   }, [])
   
   return (
