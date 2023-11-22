@@ -1,16 +1,50 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native'
 import { fonts } from '../../constants/fonts';
 
+var CurrentSlide = 0;
+var timerId;
+
 function MembersCarousel({theme}) {
+    const membersList = [{item: 1},{item: 1},{item: 1},{item: 1},{item: 1},{item: 1},{item: 1}];
+    const flatlistRef = useRef();
+
+    const goToNextSlide = () => {
+        if (CurrentSlide >= membersList.length-1){
+            CurrentSlide = 0
+            return;
+        } 
+        flatlistRef.current.scrollToIndex({
+        index: ++CurrentSlide,
+        animated: true,
+       });
+     };
+
+
+    const startAutoCarouselTimer = () => {
+        timerId = setInterval(goToNextSlide, 4000);
+    };
+
+    useEffect(() => {
+        
+    startAutoCarouselTimer();
+
+      return () => {
+        if (timerId) {
+            clearInterval(timerId);
+          }
+      }
+    }, []);
+
   return (
     <View style={styles.membersContainer}>
         <Text style={[styles.membersText,{color: theme?.fontColor}]}>Members</Text>
 
         <FlatList
-        data={[{item: 1},{item: 1},{item: 1},{item: 1},{item: 1},{item: 1},{item: 1}]} 
+        data={membersList} 
+        ref={flatlistRef}
         keyExtractor={(item, index) => index }
-        snapToInterval={190}
+        snapToInterval={170}
         decelerationRate={'fast'}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
@@ -35,8 +69,8 @@ const styles = StyleSheet.create({
         fontSize: 19
     },
     singleMember: {
-        height: 150,
-        width: 180,
+        height: 130,
+        width: 160,
         borderRadius: 12,
         marginTop: 10,
         marginRight: 10,

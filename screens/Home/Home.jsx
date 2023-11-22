@@ -95,8 +95,8 @@ const styles = StyleSheet.create({
     marginTop: 8
   },
   hamburger: {
-    height: 28,
-    width: 28,
+    height: 32,
+    width: 32,
     marginTop: 8
   },
   menuLayer: {
